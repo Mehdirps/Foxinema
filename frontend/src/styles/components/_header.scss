@@ -1,0 +1,102 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(61, 59, 84);
+    background: linear-gradient(0deg, rgba(61, 59, 84, 1) 0%, rgba(45, 44, 60, 1) 18%);
+    padding: 0 10px;
+    height: 15vh;
+
+    @media screen and (min-width: 499px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    a {
+        width: max-content;
+
+        figure {
+            width: 100px;
+            margin: 0;
+
+            @media screen and (min-width: 1000px) {
+                width: 150px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .name {
+        display: none;
+
+        @media screen and (min-width: 499px) {
+            display: initial;
+            width: max-content;
+            margin: auto;
+            text-align: center;
+            color: $site-name-color;
+            font-size: 1.5rem;
+            font-family: $title-font;
+        }
+
+        @media screen and (min-width: 499px) {
+            font-size: 2rem;
+        }
+    }
+
+    .icons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+
+        div {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            @media screen and (min-width: 999px) {
+                width: max-content;
+                height: max-content;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            svg {
+                width: 30px;
+                height: 30px;
+                color: $icon-color;
+                margin-right: 5px;
+
+            }
+
+            p {
+                display: none;
+
+                @media screen and (min-width: 999px) {
+                    display: initial;
+                    text-align: center;
+                    color: $text-color;
+                }
+            }
+        }
+
+        .active {
+            div {
+                svg {
+                    color: $orange;
+                }
+
+                // p {
+                //     color: $orange;
+                // }
+            }
+        }
+    }
+}

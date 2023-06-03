@@ -1,0 +1,115 @@
+.main {
+    @include flex-column;
+    min-height: 100vh;
+
+    .choice-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        h1 {
+            margin: 20px;
+            text-align: center;
+            color: white;
+
+            .user-name {
+                color: $orange;
+                font-family: $title-font;
+            }
+        }
+
+        .logo {
+            width: 250px;
+            margin: auto;
+            padding-top: 10px;
+
+            @media screen and (min-width: 600px) {
+                width: 500px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .carroussel {
+            width: 280px;
+            max-width: 900px;
+            margin: 30px auto;
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            overflow-x: scroll;
+            border: 2px solid $orange;
+            border-radius: 10px;
+            background-color: #2D2C3C;
+
+            @media screen and (min-width: 400px) {
+                width: 380px;
+            }
+
+            @media screen and (min-width: 500px) {
+                width: 480px;
+            }
+
+            @media screen and (min-width: 600px) {
+                width: 580px;
+            }
+
+            @media screen and (min-width: 700px) {
+                width: 680px;
+            }
+
+            @media screen and (min-width: 800px) {
+                width: 780px;
+            }
+
+            @media screen and (min-width: 900px) {
+                width: 880px;
+            }
+
+            .image {
+                height: 200px;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .selected {
+                border: 3px solid $orange;
+                height: 200px;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+
+        .links{
+            display: flex;
+            flex-direction: column;
+
+            .button {
+                width: 20%;
+                margin: auto;
+            }
+
+            .skip {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+
+    }
+
+    a:nth-of-type(2) {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+}

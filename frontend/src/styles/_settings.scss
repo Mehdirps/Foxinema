@@ -1,0 +1,58 @@
+$button-color: #ee5b26;
+$orange: #ee5b26;
+$input-border: #ee5b26;
+$title-font: 'Orbitron', sans-serif;
+$title-color: #ee5b26;
+$button-background: #ee5b26;
+$background: #2D2C3C;
+$icon-color: white;
+$border: #EE5B26;
+$site-name-color: white;
+$text-font: 'Roboto', sans-serif;
+$text-color: white;
+
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button {
+    background-color: $button-color;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    min-width: 80px;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    width: max-content;
+
+    &:hover {
+        color: $button-color;
+        background-color: white;
+    }
+}
+@mixin active-btn {
+    background-color: white;
+    border: none;
+    color: $orange;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    min-width: 80px;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        color: $button-color;
+        background-color: white;
+    }
+}

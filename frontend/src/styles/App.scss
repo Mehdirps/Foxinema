@@ -1,0 +1,94 @@
+@import 'settings';
+@import './pages/choiceStyles';
+@import './pages/welcomeStyles';
+@import './pages/profil';
+@import './pages/followedMedia';
+@import './pages/informations';
+@import './pages/homeStyles';
+@import './pages/mediaDetails';
+@import './pages/notFound';
+@import './pages/allMedias';
+@import './components/header';
+@import './components/footer';
+
+
+.button {
+    @include button;
+}
+
+.active-btn {
+    @include active-btn;
+}
+
+* {
+    font-family: 'Roboto';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #3D3B54;
+}
+
+a {
+    color: white;
+}
+
+.name {
+    color: $orange;
+    font-family: $title-font;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $title-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 1px;
+}
+
+.carroussel {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+    overflow-x: scroll;
+
+    .image {
+        // width: 150px;
+        height: 240px;
+
+        img {
+            // width: 100%;
+            height: 100%;
+        }
+    }
+
+    .empty-list {
+        margin: auto;
+        font-size: 1.2rem;
+        color: $orange;
+    }
+}
+
+.more {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 20px auto;
+    cursor: pointer;
+}
