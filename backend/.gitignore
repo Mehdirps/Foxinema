@@ -1,4 +1,4 @@
 /config/
-/uploads
+# /uploads
 /.env
 /node_modules
