@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Profil from '../../pages/Profil';
 import Welcome from '../../pages/Welcome';
@@ -16,7 +16,7 @@ import AllMedias from '../../pages/AllMedias';
 
 const index = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route element={<IndexLayout />}>
                     <Route index element={<Welcome />} />
@@ -40,7 +40,7 @@ const index = () => {
                     </Route>
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
