@@ -4,10 +4,11 @@ import { faStar, faTrash } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Opinion = (props) => {
     let opinion = props.opinion;
-    const user = props.user;
+    const user = useSelector((state) => state.user.value);
     const note = [];
     const [opinionOwner, setOpinionOwner] = useState([]);
     const arrayFilter = props.arrayFilter;
@@ -36,7 +37,7 @@ const Opinion = (props) => {
             setOpinionOwner(res.data)
         })
     }, [opinion.owner, setOpinionOwner])
-
+    console.log(opinion);
     const handleDeleteOpinion = () => {
         if (mediaType === 'movie') {
             axios({
@@ -89,7 +90,7 @@ const Opinion = (props) => {
                             <img src={`${process.env.REACT_APP_API_URL + opinionOwner.avatar}`} alt={'Avatar de ' + opinionOwner.userName} />
                         </figure>
                         <div className="infos">
-                            <h3 className='name'>{opinionOwner.userName}</h3>
+                            <h4 className='name'>{opinionOwner.userName}</h4>
                             <p>{opinion.comment}</p>
                             <div className="note">
                                 {note}{emptyStar}

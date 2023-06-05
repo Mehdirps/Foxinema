@@ -159,6 +159,18 @@
             }
         }
 
+        .opinions {
+            h3 {
+                color: white;
+                margin: 15px;
+            }
+
+
+            .opinion {
+                max-width: 500px;
+            }
+        }
+
         .discussions,
         .opinions {
             text-align: center;

@@ -20,6 +20,7 @@ const Opinions = (props) => {
     const [userList, setUserList] = useState('');
     const [opinionList, setOpinionList] = useState(props.media.opinions);
     const mediaType = props.mediaType;
+    const myOpininon = opinionList.filter(opinion => opinion.owner === user._id)[0];
 
     let OpinionsUserList = useMemo(() => [], []);
 
@@ -174,16 +175,27 @@ const Opinions = (props) => {
                     </div>
                     : ""
             }
-            <div className="opinions-container">
-                {
-                    opinionList ?
-                        opinionList.length > 0 ?
-                            opinionList.slice(0, OpinionListLenght).map((opinion, id) =>
-                                <Opinion opinion={opinion} key={id} user={user} arrayFilter={setOpinionsListFiltered} mediaType={mediaType} />
-                            )
-                            : <p className='no-opinions'>Aucun avis n'est disponible pour le moment. Soit le premier à en donner un !</p>
-                        : ''
-                }
+            {
+                myOpininon ?
+                    <div className="my-opinion-container">
+                        <h3>Mon avis sur {props.media.name}</h3>
+                        <Opinion opinion={myOpininon} mediaType={mediaType} arrayFilter={setOpinionsListFiltered} />
+                    </div>
+                    : null
+            }
+            <div className="opinions-box">
+                <h3>Les avis des utilisateurs !</h3>
+                <div className="opinions-container">
+                    {
+                        opinionList ?
+                            opinionList.length > 0 ?
+                                opinionList.slice(0, OpinionListLenght).filter(opinion => opinion.owner !== user._id).map((opinion, id) =>
+                                    <Opinion opinion={opinion} key={id} arrayFilter={setOpinionsListFiltered} mediaType={mediaType} />
+                                )
+                                : <p className='no-opinions'>Aucun avis n'est disponible pour le moment. Soit le premier à en donner un !</p>
+                            : ''
+                    }
+                </div>
             </div>
             {
                 opinionList ?
