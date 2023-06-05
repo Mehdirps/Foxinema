@@ -9,7 +9,7 @@ const Discutions = (props) => {
     const media = props.media
     const mediaType = props.mediaType;
     const [posts, setPosts] = useState([]);
-    console.log(`${process.env.REACT_APP_API_URL}post/${mediaType}/${media._id}`);
+
     useEffect(() => {
         axios({
             method: 'GET',
