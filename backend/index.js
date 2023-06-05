@@ -7,7 +7,7 @@ const SeasonRoutes = require('./routes/season.routes');
 const OpinionRoutes = require('./routes/opinion.routes');
 const PostRoutes = require('./routes/post.routes');
 const CommentRoutes = require('./routes/comment.routes');
-require('dotenv').config({ path: '/.env' })
+require('dotenv').config({ path: './.env' })
 require('./dbConfig');
 const { requireAuth } = require('./middlewares/auth.middleware');
 const cors = require('cors');
