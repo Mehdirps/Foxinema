@@ -37,14 +37,14 @@ transporter.verify((err, success) => {
     }
 });
 
-transporter.sendMail( {
-    from: "contact@foxinema.fr",
-    to: "mehdi.raposo77@gmail.com",
-    subject: "E-mail de test",
-    text: "Ceci est un email de test",
-    html: "<p>Ceci est un email de test</p>"
-}
-);
+// transporter.sendMail( {
+//     from: "contact@foxinema.fr",
+//     to: "mehdi.raposo77@gmail.com",
+//     subject: "E-mail de test",
+//     text: "Ceci est un email de test",
+//     html: "<p>Ceci est un email de test</p>"
+// }
+// );
 const app = express();
 
 // Middlewares
