@@ -7,35 +7,35 @@ const SeasonRoutes = require('./routes/season.routes');
 const OpinionRoutes = require('./routes/opinion.routes');
 const PostRoutes = require('./routes/post.routes');
 const CommentRoutes = require('./routes/comment.routes');
-require('dotenv').config({ path: './.env' })
-require('./dbConfig');
+require('dotenv').config({ path: './config/.env' })
+require('./config/dbConfig');
 const { requireAuth } = require('./middlewares/auth.middleware');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport({
-    host: "ail.o2switch.net",
-    port: 465,
-    secure: true,
-    auth: {
-        type: 'OAuth2',
-        user: process.env.EMAIL,
-        pass: process.env.EMAIL_PASSWORD
-    },
-    tls: {
-        rejectUnauthorized: false,
-    },
-    sendMail: true
-})
+// const transporter = nodemailer.createTransport({
+//     host: "ail.o2switch.net",
+//     port: 465,
+//     secure: true,
+//     auth: {
+//         type: 'OAuth2',
+//         user: process.env.EMAIL,
+//         pass: process.env.EMAIL_PASSWORD
+//     },
+//     tls: {
+//         rejectUnauthorized: false,
+//     },
+//     sendMail: true
+// })
 
-transporter.verify((err, success) => {
-    if (err) {
-        return console.log(err);
-    }
-    if (success) {
-        console.log("Server is ready to take our message")
-    }
-});
+// transporter.verify((err, success) => {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     if (success) {
+//         console.log("Server is ready to take our message")
+//     }
+// });
 
 // transporter.sendMail( {
 //     from: "contact@foxinema.fr",
@@ -72,6 +72,11 @@ app.use('/opinion', OpinionRoutes);
 app.use('/post', PostRoutes);
 app.use('/comment', CommentRoutes);
 
+// test url 
+app.get('/', function (req, res) {
+    res.set('Content-type', 'text/html; charset=utf-8');
+    res.send('<h1>Api already running</h1>')
+})
 
 // JWT
 app.get('/jwtid', requireAuth, (req, res) => {
