@@ -43,11 +43,11 @@ const Layout = () => {
             .catch((err) => console.log('No Token'))
     }, [dispatch, navigate])
     return (
-        <div>
+        <>
             <Header />
             <Outlet />
             <Footer />
-        </div>
+        </>
     );
 };
 
