@@ -10,6 +10,7 @@ const FavoriteMedias = (props) => {
     const mediaName = props.medias;
 
     const medias = useSelector((state) => mediaName === 'serie' ? state.medias.favoriteSerieList : mediaName === 'movie' ? state.medias.favoriteMovieList : '')
+    
     const settings = {
         dots: true,
         infinite: false,

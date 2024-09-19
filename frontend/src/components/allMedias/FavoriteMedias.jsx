@@ -50,7 +50,7 @@ const FavoriteMovies = (props) => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1
                 }
             },
@@ -67,7 +67,7 @@ const FavoriteMovies = (props) => {
     return (
         <section className='favorite-movies'>
             <h2>Tes {mediaType === 'movie' ? 'films favoris' : mediaType === 'serie' ? 'séries favorites' : ''}</h2>
-           <Slider {...settings} className='media_carrousel'>
+            <Slider {...settings} className='media_carrousel'>
                 {
                     mediaList ?
                         mediaList.length > 0
@@ -85,7 +85,7 @@ const FavoriteMovies = (props) => {
                             : ''
                         : ''
                 }
-             </Slider>
+            </Slider>
         </section >
     );
 };

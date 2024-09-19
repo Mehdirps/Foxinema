@@ -14,6 +14,8 @@ const AllMedias = (props) => {
     const [categoryId, setCategoryId] = useState('');
     const mediaType = props.mediaType;
 
+
+
     useEffect(() => {
         if (!category) {
 
