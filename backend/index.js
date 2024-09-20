@@ -8,8 +8,8 @@ const express = require('express');
 // const PostRoutes = require('./routes/post.routes');
 // const CommentRoutes = require('./routes/comment.routes');
 require('dotenv').config()
-// require('./config/dbConfig');
-const { requireAuth } = require('./middlewares/auth.middleware');
+require('./config/dbConfig');
+// const { requireAuth } = require('./middlewares/auth.middleware');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 
