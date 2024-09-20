@@ -1,12 +1,12 @@
 const express = require('express');
-// const UserRoutes = require('./routes/user.routes');
-// const MovieRoutes = require('./routes/movie.routes');
-// const CategoryRoutes = require('./routes/category.routes');
-// const SerieRoutes = require('./routes/serie.routes');
-// const SeasonRoutes = require('./routes/season.routes');
-// const OpinionRoutes = require('./routes/opinion.routes');
-// const PostRoutes = require('./routes/post.routes');
-// const CommentRoutes = require('./routes/comment.routes');
+const UserRoutes = require('./routes/user.routes');
+const MovieRoutes = require('./routes/movie.routes');
+const CategoryRoutes = require('./routes/category.routes');
+const SerieRoutes = require('./routes/serie.routes');
+const SeasonRoutes = require('./routes/season.routes');
+const OpinionRoutes = require('./routes/opinion.routes');
+const PostRoutes = require('./routes/post.routes');
+const CommentRoutes = require('./routes/comment.routes');
 require('dotenv').config()
 require('./config/dbConfig');
 // const { requireAuth } = require('./middlewares/auth.middleware');
@@ -58,19 +58,19 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use('/profil', express.static('uploads/profil'))
-// app.use('/movies', express.static('uploads/movies'))
-// app.use('/series', express.static('uploads/series'))
+app.use('/profil', express.static('uploads/profil'))
+app.use('/movies', express.static('uploads/movies'))
+app.use('/series', express.static('uploads/series'))
 
-// // Routes
-// app.use('/user', UserRoutes);
-// app.use('/movie', MovieRoutes);
-// app.use('/category', CategoryRoutes);
-// app.use('/serie', SerieRoutes);
-// app.use('/season', SeasonRoutes);
-// app.use('/opinion', OpinionRoutes);
-// app.use('/post', PostRoutes);
-// app.use('/comment', CommentRoutes);
+// Routes
+app.use('/user', UserRoutes);
+app.use('/movie', MovieRoutes);
+app.use('/category', CategoryRoutes);
+app.use('/serie', SerieRoutes);
+app.use('/season', SeasonRoutes);
+app.use('/opinion', OpinionRoutes);
+app.use('/post', PostRoutes);
+app.use('/comment', CommentRoutes);
 
 // test url 
 app.get('/', function (req, res) {
